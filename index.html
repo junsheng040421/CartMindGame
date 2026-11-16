@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CartMind: E-Commerce Financial Behaviour Evaluator (Research Edition v4.4)</title>
+    <title>CartMind: E-Commerce Financial Behaviour Evaluator</title>
     <style>
         :root {
             --primary: #4f46e5;
@@ -58,15 +58,6 @@
             display: flex;
             align-items: center;
             gap: 8px;
-        }
-
-        .logo-area span {
-            font-size: 0.75rem;
-            background: var(--primary);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 20px;
-            font-weight: 500;
         }
 
         .header-btns {
@@ -132,33 +123,7 @@
         .welcome-content p {
             color: var(--text-muted);
             line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin: 25px 0;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--card-border);
-            padding: 15px;
-            border-radius: 10px;
-        }
-
-        .feature-card h4 {
-            color: var(--secondary);
-            margin-bottom: 5px;
-            font-size: 0.95rem;
-        }
-
-        .feature-card p {
-            font-size: 0.85rem;
-            margin-bottom: 0;
-            color: var(--text-muted);
+            margin-bottom: 30px;
         }
 
         .quiz-header {
@@ -477,7 +442,7 @@
 
     <header>
         <div class="logo-area">
-            <h1>CartMind <span>Research v4.4</span></h1>
+            <h1>CartMind</h1>
         </div>
         <div class="header-btns">
             <button class="secondary-btn" onclick="openSyncModal()">⚙️ Research Sync</button>
@@ -490,21 +455,6 @@
             <div class="welcome-content">
                 <h2>E-Commerce Financial Behaviour Evaluator</h2>
                 <p>Welcome to the empirical research simulation. You will be presented with <strong>20 randomized e-commerce checkout scenarios</strong> evaluating consumer financial behavior across multiple cognitive dimensions.</p>
-                
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <h4>Randomized Flow</h4>
-                        <p>Scenarios are shuffled to ensure unbiased, objective decision testing.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h4>ABCD Grading</h4>
-                        <p>Granular ordinal scale options (A to D) measuring cognitive susceptibility.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h4>Automated Cloud Sync</h4>
-                        <p>Results sync directly to your Google Sheet with sequential ID allocation.</p>
-                    </div>
-                </div>
 
                 <button onclick="startSimulation()">Start 20-Scenario Simulation →</button>
             </div>
@@ -899,7 +849,6 @@
             }
         ];
 
-        // Shuffle Scenarios Randomly upon initialization
         let scenarios = [];
         let currentIndex = 0;
         let userResponses = [];
@@ -917,7 +866,6 @@
         const optionsList = document.getElementById('optionsList');
 
         function startSimulation() {
-            // Shuffle array randomly
             scenarios = [...baseScenarios].sort(() => Math.random() - 0.5);
             currentIndex = 0;
             userResponses = [];
@@ -1055,7 +1003,6 @@
                 breakdownList.appendChild(div);
             });
 
-            // Brief Description & 1 Simple Suggestion per Archetype
             const cardsContainer = document.getElementById('dimensionCardsContainer');
             cardsContainer.innerHTML = '';
             const archetypesInfo = {
